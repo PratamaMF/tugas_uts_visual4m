@@ -1,0 +1,251 @@
+object Form4: TForm4
+  Left = 274
+  Top = 198
+  Width = 344
+  Height = 426
+  Caption = 'KONDISIONAL 1'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnl1: TPanel
+    Left = 0
+    Top = 0
+    Width = 337
+    Height = 401
+    TabOrder = 0
+    object l_1: TLabel
+      Left = 32
+      Top = 80
+      Width = 56
+      Height = 19
+      Caption = 'NILAI 1'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object l_2: TLabel
+      Left = 32
+      Top = 120
+      Width = 56
+      Height = 19
+      Caption = 'NILAI 2'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object l_3: TLabel
+      Left = 32
+      Top = 160
+      Width = 56
+      Height = 19
+      Caption = 'NILAI 3'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object l_4: TLabel
+      Left = 32
+      Top = 200
+      Width = 51
+      Height = 19
+      Caption = 'TOTAL'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object l_5: TLabel
+      Left = 32
+      Top = 240
+      Width = 52
+      Height = 19
+      Caption = 'GRADE'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object pnl4: TPanel
+      Left = 40
+      Top = 24
+      Width = 225
+      Height = 41
+      Caption = 'Contoh Kondisional 1'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Edtnilai1: TEdit
+      Left = 104
+      Top = 80
+      Width = 81
+      Height = 27
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+    end
+    object Edtnilai2: TEdit
+      Left = 104
+      Top = 120
+      Width = 81
+      Height = 27
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+    end
+    object Edtnilai3: TEdit
+      Left = 104
+      Top = 160
+      Width = 81
+      Height = 27
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+    end
+    object Edtbobot1: TEdit
+      Left = 200
+      Top = 80
+      Width = 81
+      Height = 27
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+    end
+    object Edtbobot2: TEdit
+      Left = 200
+      Top = 120
+      Width = 81
+      Height = 27
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 5
+    end
+    object Edtbobot3: TEdit
+      Left = 200
+      Top = 160
+      Width = 81
+      Height = 27
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 6
+    end
+    object Edttotal: TEdit
+      Left = 104
+      Top = 200
+      Width = 177
+      Height = 27
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 7
+    end
+    object Edtgrade: TEdit
+      Left = 104
+      Top = 240
+      Width = 177
+      Height = 27
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 8
+    end
+    object btn1: TButton
+      Left = 16
+      Top = 280
+      Width = 81
+      Height = 33
+      Caption = 'Proses'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 9
+      OnClick = btn1Click
+    end
+    object btn_2: TButton
+      Left = 112
+      Top = 280
+      Width = 83
+      Height = 33
+      Caption = 'Clear'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 10
+      OnClick = btn_2Click
+    end
+    object btn_3: TButton
+      Left = 208
+      Top = 280
+      Width = 81
+      Height = 33
+      Caption = 'Close'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 11
+      OnClick = btn_3Click
+    end
+  end
+end
