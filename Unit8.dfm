@@ -1,8 +1,8 @@
 object Form8: TForm8
-  Left = 161
-  Top = 108
+  Left = 444
+  Top = 169
   Width = 1054
-  Height = 695
+  Height = 685
   Caption = 'LAT'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
