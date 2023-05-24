@@ -35,6 +35,8 @@ type
     procedure btn2Click(Sender: TObject);
     procedure btn1Click(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure FormShow(Sender: TObject);
+    procedure btn3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,6 +45,7 @@ type
 
 var
   Form9: TForm9;
+  upd:string;
 
 implementation
 uses Unit8;
@@ -51,7 +54,7 @@ uses Unit8;
 
 procedure TForm9.btn2Click(Sender: TObject);
 var
-  a:Integer;
+  a: Integer;
 begin
    if (Edtjmulai.Text='') or (Edtjmulai.Text='00:00') or (Edtjakhir.Text='') or (Edtjakhir.Text='00:00') or (Edtkelas.Text='') or (Edtmatkul.Text='') or (Edtruangan.Text='') or (Edthadir.Text='')then
    begin
@@ -93,10 +96,61 @@ begin
 end;
 
 procedure TForm9.DBGrid1CellClick(Column: TColumn);
-var
-  a:interger;
 begin
+  try
+  upd:=form8.qry1.Fields[0].AsString;
   Edtjmulai.Text:= Form8.qry1.Fields[1].AsString;
+  Edtjakhir.Text:= Form8.qry1.Fields[2].AsString;
+  Cbbhari.Text:= Form8.qry1.Fields[3].AsString;
+  dtp1.Date:= Form8.qry1.Fields[4].AsDateTime;
+  Edtruangan.Text:= Form8.qry1.Fields[5].AsString;
+  Edtmatkul.Text:= Form8.qry1.Fields[6].AsString;
+  Edtkelas.Text:= Form8.qry1.Fields[7].AsString;
+  Edthadir.Text:=Form8.qry1.Fields[8].AsString;
+  except
+  //kosong
+  end;
+  end;
+
+procedure TForm9.FormShow(Sender: TObject);
+begin
+ Form8.qry1.SQL.Clear;
+ Form8.qry1.SQL.Add('select * from jadwal_tb');
+ Form8.qry1.Open;
+end;
+
+procedure TForm9.btn3Click(Sender: TObject);
+begin
+if (Edtjmulai.Text='') or (Edtjmulai.Text='00:00') or (Edtjakhir.Text='') or (Edtjakhir.Text='00:00') or (Edtkelas.Text='') or (Edtmatkul.Text='') or (Edtruangan.Text='') or (Edthadir.Text='')then
+   begin
+     ShowMessage('DATA BELUM DIISI DENGAN BENAR');
+   end else
+
+   if (Cbbhari.Text='') or (Cbbhari.Text='-- PILIH HARI --') then
+   begin
+     ShowMessage('HARI BELUM DI ISI DENGAN BENAR');
+   end else
+
+   if (Edtjmulai.Text = Form8.qry1.Fields[1].AsString) and (Edtjakhir.Text = Form8.qry1.Fields[2].AsString) and (Cbbhari.Text = Form8.qry1.Fields[3].AsString) then
+   begin
+     ShowMessage('Data Tidak Ada Perubahan');
+   end else
+
+   begin
+     //KodeUpdate
+     with Form8.qry1 do
+     begin
+       SQL.Clear;
+       SQL.Add('update jadwal_tb set jam_mulai="'+Edtjmulai.Text+'", jam_akhir="'+Edtjakhir.Text+'", hari="'+Cbbhari.Text+'", ruang="'+Edtruangan.Text+'", matkul="'+Edtmatkul.Text+'", kelas="'+Edtkelas.Text+'", kehadiran_total="'+Edthadir.Text+'" where no="'+upd+'"');
+       ExecSQL;
+
+       SQL.Clear;
+       SQL.Add('select * from jadwal_tb');
+       Open;
+       ShowMessage('Data Berhasil Di Update');
+     end;
+   end;
+
 end;
 
 end.

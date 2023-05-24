@@ -1,7 +1,7 @@
 object Form9: TForm9
   Left = 179
   Top = 110
-  Width = 702
+  Width = 787
   Height = 745
   Caption = 'TAMBAH DATA JADWAL'
   Color = clBtnFace
@@ -11,6 +11,7 @@ object Form9: TForm9
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object pnl1: TPanel
@@ -263,6 +264,7 @@ object Form9: TForm9
       Height = 49
       Caption = 'UBAH'
       TabOrder = 9
+      OnClick = btn3Click
     end
     object btn4: TButton
       Left = 552
