@@ -1,8 +1,8 @@
 object Form8: TForm8
-  Left = 444
-  Top = 169
+  Left = 267
+  Top = 166
   Width = 1054
-  Height = 685
+  Height = 684
   Caption = 'LAT'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -21,6 +21,13 @@ object Form8: TForm8
     Height = 649
     Color = clSkyBlue
     TabOrder = 0
+    object l_id: TLabel
+      Left = 776
+      Top = 64
+      Width = 11
+      Height = 13
+      Caption = 'ID'
+    end
     object btn1: TButton
       Left = 664
       Top = 128

@@ -30,13 +30,15 @@ type
     btn3: TButton;
     btn4: TButton;
     btn5: TButton;
-    DBGrid1: TDBGrid;
     dtp1: TDateTimePicker;
+    l_10: TLabel;
+    DBGrid1: TDBGrid;
     procedure btn2Click(Sender: TObject);
     procedure btn1Click(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure FormShow(Sender: TObject);
     procedure btn3Click(Sender: TObject);
+    procedure btn4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -107,6 +109,8 @@ begin
   Edtmatkul.Text:= Form8.qry1.Fields[6].AsString;
   Edtkelas.Text:= Form8.qry1.Fields[7].AsString;
   Edthadir.Text:=Form8.qry1.Fields[8].AsString;
+  btn3.Enabled:=True;
+  btn4.Enabled:=True;
   except
   //kosong
   end;
@@ -117,6 +121,17 @@ begin
  Form8.qry1.SQL.Clear;
  Form8.qry1.SQL.Add('select * from jadwal_tb');
  Form8.qry1.Open;
+
+ DBGrid1.columns[0].Width:=30;
+  DBGrid1.columns[1].Width:=70;
+  DBGrid1.columns[2].Width:=70;
+  DBGrid1.Columns[3].Width:=90;
+  DBGrid1.Columns[5].Width:=50;
+  DBGrid1.Columns[6].Width:=110;
+  DBGrid1.Columns[7].Width:=90;
+
+  btn3.Enabled:=False;
+  btn4.Enabled:=False;
 end;
 
 procedure TForm9.btn3Click(Sender: TObject);
@@ -152,5 +167,38 @@ if (Edtjmulai.Text='') or (Edtjmulai.Text='00:00') or (Edtjakhir.Text='') or (Ed
    end;
 
 end;
+
+procedure TForm9.btn4Click(Sender: TObject);
+begin
+  if (Edtjmulai.Text='') or (Edtjmulai.Text='00:00') or (Edtjakhir.Text='') or (Edtjakhir.Text='00:00') or (Edtkelas.Text='') or (Edtmatkul.Text='') or (Edtruangan.Text='') or (Edthadir.Text='')then
+   begin
+     ShowMessage('DATA BELUM DIISI DENGAN BENAR');
+   end else
+
+   if (Cbbhari.Text='') or (Cbbhari.Text='-- PILIH HARI --') then
+   begin
+     ShowMessage('HARI BELUM DI ISI DENGAN BENAR');
+   end else
+   begin
+
+     if MessageDlg('Apakah Anda Yaking Ingin Menghapus  Data Ini ??', mtWarning, [mbYes,mbNo],0)=mryes then
+     begin
+      with Form8.qry1 do
+      begin
+        SQL.Clear;
+        SQL.Add('delete from jadwal_tb where id="'+upd+'"');
+        ExecSQL;
+      end;
+        Form8.qry1.SQL.Clear;
+        Form8.qry1.SQL.Add('select * from jadwal_tb');
+        Form8.qry1.Open;
+      ShowMessage('Data Berhasil Dihapus');
+     end else
+     begin
+       ShowMessage('Data Batal Dihapus');
+     end;
+   end;
+end;
+
 
 end.

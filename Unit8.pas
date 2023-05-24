@@ -26,6 +26,7 @@ type
     frxdbdetailjadwal: TfrxDBDataset;
     frxdetailjadwal: TfrxReport;
     btn5: TButton;
+    l_id: TLabel;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure FormShow(Sender: TObject);

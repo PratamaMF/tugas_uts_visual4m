@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 179
-  Top = 110
+  Left = 433
+  Top = 124
   Width = 787
   Height = 745
   Caption = 'TAMBAH DATA JADWAL'
@@ -134,6 +134,18 @@ object Form9: TForm9
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object l_10: TLabel
+      Left = 432
+      Top = 232
+      Width = 6
+      Height = 23
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
@@ -273,6 +285,7 @@ object Form9: TForm9
       Height = 49
       Caption = 'HAPUS'
       TabOrder = 10
+      OnClick = btn4Click
     end
     object btn5: TButton
       Left = 552
@@ -281,71 +294,6 @@ object Form9: TForm9
       Height = 49
       Caption = 'BATAL'
       TabOrder = 11
-    end
-    object DBGrid1: TDBGrid
-      Left = 32
-      Top = 360
-      Width = 633
-      Height = 193
-      DataSource = Form8.ds1
-      TabOrder = 12
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
-      TitleFont.Height = -11
-      TitleFont.Name = 'Tahoma'
-      TitleFont.Style = []
-      OnCellClick = DBGrid1CellClick
-      Columns = <
-        item
-          Expanded = False
-          FieldName = 'no'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'jam_mulai'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'jam_akhir'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'hari'
-          Width = 115
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'tanggal'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'ruang'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'matkul'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'kelas'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'kehadiran_total'
-          Visible = True
-        end>
     end
     object dtp1: TDateTimePicker
       Left = 200
@@ -360,7 +308,21 @@ object Form9: TForm9
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      TabOrder = 12
+    end
+    object DBGrid1: TDBGrid
+      Left = 40
+      Top = 352
+      Width = 609
+      Height = 305
+      DataSource = Form8.ds1
       TabOrder = 13
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      OnCellClick = DBGrid1CellClick
     end
   end
 end
